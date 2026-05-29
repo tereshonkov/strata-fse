@@ -13,6 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 function my_blocks_register_blocks() {
     register_block_type( __DIR__ . '/src/blocks/hero-block' );
     register_block_type( __DIR__ . '/src/blocks/header-block' );
+    register_block_type( __DIR__ . '/src/blocks/stats-block' );
 }
 add_action( 'init', 'my_blocks_register_blocks' );
 
