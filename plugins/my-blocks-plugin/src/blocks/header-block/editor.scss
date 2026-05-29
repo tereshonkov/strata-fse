@@ -1,0 +1,16 @@
+.wp-block-my-plugin-header-block {
+    // Прибираємо fixed щоб був видний в редакторі
+    position: relative !important;
+    
+    // Темний фон щоб було видно логотип і меню
+    background: rgba(14, 16, 18, 0.95);
+    
+    // CSS змінні бо в редакторі вони можуть не підхопитись
+    --gold: #C9A24B;
+    --white: #F3F2EE;
+    --muted: #9B9DA3;
+    --dim: #696C72;
+    --line: rgba(255, 255, 255, 0.08);
+    --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+    --ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+}

@@ -1,0 +1,21 @@
+// editor.scss — тільки те що відрізняється від редактора
+.wp-block-my-plugin-stats-block {
+    background: #0E1012;
+    
+    .stats-block__num {
+        color: #F3F2EE;
+    }
+    
+    .stats-block__label {
+        color: #9B9DA3;
+    }
+
+    em {
+        color: #C9A24B;
+        font-size: clamp(48px, 5.5vw, 76px);
+        font-weight: 800;
+        font-style: normal;
+        letter-spacing: -0.04em;
+        line-height: 1;
+    }
+}
