@@ -1,0 +1,164 @@
+// ============================================================
+// HERO BLOCK — STRATA
+// ============================================================
+
+// CSS токены (дизайн-система)
+.hero-block {
+    --bg-0: #0E1012;
+    --bg-1: #16181C;
+    --gold: #C9A24B;
+    --gold-soft: #D8B566;
+    --white: #F3F2EE;
+    --muted: #9B9DA3;
+    --dim: #696C72;
+    --line: rgba(255, 255, 255, 0.08);
+    --sans: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+    --ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+  
+    // Layout
+    position: relative;
+    box-sizing: border-box;
+    height: calc(100vh - var(--wp-admin--admin-bar--height, 0px));
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: clamp(60px, 8vw, 110px);
+    isolation: isolate;
+    font-family: var(--sans);
+
+    .btn-arrow {
+        display: inline-flex;
+        transition: transform 0.3s var(--ease);
+    }
+  
+    // Background image + overlay
+    &__bg {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background-color: #14161A;
+      background-image:
+        url("https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=2200&q=80"),
+        linear-gradient(180deg, #23272D 0%, #15171B 60%, #0E1012 100%);
+      background-size: cover, cover;
+      background-position: center 30%, center;
+      background-repeat: no-repeat;
+      filter: saturate(0.9) contrast(1.02);
+    }
+  
+    &__overlay {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(180deg, rgba(14,16,18,0.55) 0%, rgba(14,16,18,0.25) 35%, rgba(14,16,18,0.88) 100%),
+        radial-gradient(120% 80% at 15% 100%, rgba(14,16,18,0.6), transparent 60%);
+    }
+  
+    // Content wrapper
+    &__content {
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding-inline: clamp(20px, 5vw, 56px);
+    }
+  
+    // Tagline (kicker)
+    &__tagline {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 500;
+      margin-bottom: 30px;
+  
+      &::before {
+        content: "";
+        width: 28px;
+        height: 1px;
+        background: var(--gold);
+        opacity: 0.7;
+      }
+    }
+  
+    // Main title
+    &__title {
+      font-size: clamp(44px, 7vw, 92px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.0;
+      color: var(--white);
+      margin-bottom: 30px;
+      max-width: 16ch;
+    }
+  
+    // Subtitle
+    &__subtitle {
+      font-size: 19px;
+      color: var(--muted);
+      margin-bottom: 44px;
+      max-width: 50ch;
+      line-height: 1.6;
+    }
+  
+    // Buttons row
+    &__buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+  
+    // Button base
+    &__btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 11px;
+      height: 56px;
+      padding-inline: 30px;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      border: none;
+      cursor: pointer;
+      font-family: var(--sans);
+      transition: background 0.3s var(--ease), color 0.3s var(--ease);
+  
+    &--primary {
+        background: var(--gold);
+        color: #181206;
+        transition: background 0.3s var(--ease);
+    
+        .btn-arrow {
+            display: inline-block;
+            transition: transform 0.3s var(--ease);
+        }
+    
+        &:hover {
+            background: var(--gold-soft);
+    
+            .btn-arrow {
+                transform: translateX(5px);
+            }
+        }
+    }
+
+    &--ghost {
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        color: var(--white);
+        transition: border-color 0.3s var(--ease), color 0.3s var(--ease);
+    
+        &:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+    }
+    }
+  }

@@ -1,0 +1,39 @@
+{
+    "apiVersion": 3,
+    "name": "my-plugin/hero-block",
+    "title": "Hero Block",
+    "category": "theme",
+    "description": "Hero section for STRATA construction landing",
+    "supports": {
+      "html": false,
+      "align": [ "full", "wide" ]
+    },
+    "attributes": {
+      "tagline": {
+        "type": "string",
+        "default": "Turnkey Construction & Interiors"
+      },
+      "title": {
+        "type": "string",
+        "default": "Spaces built to a higher standard."
+      },
+      "subtitle": {
+        "type": "string",
+        "default": "Premium turnkey renovation for homes and commercial interiors engineered to the millimetre, delivered on schedule, finished to last."
+      },
+      "primaryButtonText": {
+        "type": "string",
+        "default": "Calculate Cost"
+      },
+      "secondaryButtonText": {
+        "type": "string",
+        "default": "View Projects"
+      },
+      "phone": {
+        "type": "string",
+        "default": "+1 (415) 555-0148"
+      }
+    },
+    "editorScript": "file:../../../build/index.js",
+    "style": "file:../../../build/style-index.css"
+  }
