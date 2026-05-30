@@ -1,21 +1,5 @@
-// ============================================================
-// HERO BLOCK — STRATA
-// ============================================================
 
-// CSS токены (дизайн-система)
 .hero-block {
-    --bg-0: #0E1012;
-    --bg-1: #16181C;
-    --gold: #C9A24B;
-    --gold-soft: #D8B566;
-    --white: #F3F2EE;
-    --muted: #9B9DA3;
-    --dim: #696C72;
-    --line: rgba(255, 255, 255, 0.08);
-    --sans: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
-    --ease: cubic-bezier(0.25, 0.1, 0.25, 1);
-  
     // Layout
     position: relative;
     box-sizing: border-box;
@@ -110,55 +94,5 @@
       display: flex;
       gap: 16px;
       flex-wrap: wrap;
-    }
-  
-    // Button base
-    &__btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 11px;
-      height: 56px;
-      padding-inline: 30px;
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      border-radius: 2px;
-      border: none;
-      cursor: pointer;
-      font-family: var(--sans);
-      transition: background 0.3s var(--ease), color 0.3s var(--ease);
-  
-    &--primary {
-        background: var(--gold);
-        color: #181206;
-        transition: background 0.3s var(--ease);
-    
-        .btn-arrow {
-            display: inline-block;
-            transition: transform 0.3s var(--ease);
-        }
-    
-        &:hover {
-            background: var(--gold-soft);
-    
-            .btn-arrow {
-                transform: translateX(5px);
-            }
-        }
-    }
-
-    &--ghost {
-        background: transparent;
-        border: 1px solid rgba(255, 255, 255, 0.4);
-        color: var(--white);
-        transition: border-color 0.3s var(--ease), color 0.3s var(--ease);
-    
-        &:hover {
-            border-color: var(--gold);
-            color: var(--gold);
-        }
-    }
     }
   }

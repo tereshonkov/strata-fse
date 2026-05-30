@@ -3,3 +3,75 @@ Theme Name: Strata Theme
 Description: Minimal block theme for STRATA landing
 Version: 1.0
 */
+
+:root {
+    --bg-0: #0E1012;
+    --bg-1: #16181C;
+    --bg-2: #1B1E23;
+    --bg-3: #23262C;
+    --gold: #C9A24B;
+    --gold-soft: #D8B566;
+    --gold-deep: #A6832F;
+    --gold-glow: rgba(201, 162, 75, 0.18);
+    --white: #F3F2EE;
+    --muted: #9B9DA3;
+    --dim: #696C72;
+    --line: rgba(255, 255, 255, 0.08);
+    --line-2: rgba(255, 255, 255, 0.14);
+    --sans: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+    --ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+    --container: 1280px;
+    --gutter: clamp(20px, 5vw, 64px);
+    --section-y: clamp(80px, 11vw, 150px);
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    height: 56px;
+    padding-inline: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    border: none;
+    cursor: pointer;
+    font-family: var(--sans);
+    text-decoration: none;
+}
+
+.btn--primary {
+    background: var(--gold);
+    color: #181206;
+    transition: background 0.3s var(--ease);
+}
+
+.btn--primary:hover {
+    background: var(--gold-soft);
+}
+
+.btn--primary .btn-arrow {
+    display: inline-flex;
+    transition: transform 0.3s var(--ease);
+}
+
+.btn--primary:hover .btn-arrow {
+    transform: translateX(5px);
+}
+
+.btn--ghost {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: var(--white);
+    transition: border-color 0.3s var(--ease), color 0.3s var(--ease);
+}
+
+.btn--ghost:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+}

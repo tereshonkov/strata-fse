@@ -1,3 +1,10 @@
 import './blocks/hero-block';
 import './blocks/header-block';
 import './blocks/stats-block';
+import './blocks/service-block';
+import './blocks/process-block';
+import './blocks/portfolio-block';
+import './blocks/pricing-block';
+import './blocks/calculator-block';
+import './blocks/why-strata-block';
+import './blocks/testimonials-block';

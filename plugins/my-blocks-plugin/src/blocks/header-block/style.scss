@@ -1,15 +1,4 @@
 .header {
-    --gold: #C9A24B;
-    --gold-soft: #D8B566;
-    --white: #F3F2EE;
-    --muted: #9B9DA3;
-    --dim: #696C72;
-    --line: rgba(255, 255, 255, 0.08);
-    --line-2: rgba(255, 255, 255, 0.14);
-    --sans: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
-    --ease: cubic-bezier(0.25, 0.1, 0.25, 1);
-
     position: fixed;
     inset: 0 0 auto 0;
     z-index: 100;

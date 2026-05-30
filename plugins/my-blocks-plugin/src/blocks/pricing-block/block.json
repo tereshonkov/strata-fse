@@ -1,0 +1,98 @@
+{
+  "apiVersion": 3,
+  "name": "my-plugin/pricing-block",
+  "title": "Pricing Block",
+  "category": "theme",
+  "description": "Pricing section for STRATA construction landing",
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "kicker": {
+      "type": "string",
+      "default": "04 — Pricing"
+    },
+    "title": {
+      "type": "string",
+      "default": "Transparent pricing, per m²"
+    },
+    "lead": {
+      "type": "string",
+      "default": "Three levels of finish. Every line item is fixed in the contract before work begins."
+    },
+    "price_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "category": { "type": "string" },
+          "price": { "type": "string" },
+          "suffix": { "type": "string" },
+          "description": { "type": "string" },
+          "features": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "button_text": { "type": "string" },
+          "button_url": { "type": "string" },
+          "button_variant": { "type": "string" }
+        }
+      },
+      "default": [
+        {
+          "category": "Economy",
+          "price": "$180",
+          "suffix": "/m²",
+          "description": "Essential finishing for rental-ready spaces.",
+          "features": [
+            "Rough & fine finishing",
+            "Standard material range",
+            "Dedicated project manager",
+            "1-year workmanship warranty",
+            "Designer supervision",
+            "Custom millwork & joinery"
+          ],
+          "button_text": "Choose economy",
+          "button_url": "#",
+          "button_variant": "ghost"
+        },
+        {
+          "category": "Standard",
+          "price": "$420",
+          "suffix": "/m²",
+          "description": "Turnkey finish for comfortable living.",
+          "features": [
+            "Everything in Economy",
+            "Curated mid-range materials",
+            "Dedicated on-site foreman",
+            "3-year workmanship warranty",
+            "Designer supervision",
+            "Custom millwork & joinery"
+          ],
+          "button_text": "Choose standard",
+          "button_url": "#",
+          "button_variant": "primary"
+        },
+        {
+          "category": "Premium",
+          "price": "$680",
+          "suffix": "/m²",
+          "description": "Bespoke interiors, no compromises.",
+          "features": [
+            "Everything in Standard",
+            "Premium & imported materials",
+            "Custom millwork & joinery",
+            "Dedicated project architect",
+            "5-year workmanship warranty",
+            "Priority scheduling"
+          ],
+          "button_text": "Choose premium",
+          "button_url": "#",
+          "button_variant": "ghost"
+        }
+      ]
+    }
+  },
+  "editorScript": "file:../../../build/index.js",
+  "style": "file:../../../build/style-index.css"
+}

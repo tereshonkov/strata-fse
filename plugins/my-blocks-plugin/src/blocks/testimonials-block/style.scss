@@ -1,0 +1,217 @@
+.testimonials-block,
+.wp-block-my-plugin-testimonials-block {
+    --bg-0: #0E1012;
+    --bg-2: #1B1E23;
+    --gold: #C9A24B;
+    --white: #F3F2EE;
+    --muted: #9B9DA3;
+    --line: rgba(255, 255, 255, 0.08);
+    --line-2: rgba(255, 255, 255, 0.14);
+    --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+    --ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+    --section-y: clamp(80px, 11vw, 150px);
+    --container: 1280px;
+    --gutter: clamp(20px, 5vw, 64px);
+    --sans: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+    background: var(--bg-0);
+    border-block: 1px solid var(--line);
+    padding-block: var(--section-y);
+    font-family: var(--sans);
+
+    &__container {
+        max-width: var(--container);
+        margin: 0 auto;
+        padding-inline: var(--gutter);
+    }
+
+    &__head {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+        margin-bottom: clamp(40px, 5vw, 72px);
+    }
+
+    &__kicker {
+        .kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-family: var(--mono);
+            font-size: 12px;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 500;
+
+            &::before {
+                content: "";
+                width: 28px;
+                height: 1px;
+                background: var(--gold);
+                opacity: 0.7;
+            }
+        }
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: clamp(32px, 4.2vw, 56px);
+        line-height: 1.02;
+        letter-spacing: -0.025em;
+        color: var(--white);
+    }
+
+    &__preview {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+
+    // Carousel stage
+    .testi__stage {
+        position: relative;
+        min-height: 220px;
+    }
+
+    .testi__slide {
+        display: none;
+
+        &.is-active {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: clamp(28px, 4vw, 56px);
+            align-items: center;
+            animation: testi-fade 0.6s var(--ease);
+
+            @media (max-width: 620px) {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+
+    .testi__avatar {
+        width: 132px;
+        height: 132px;
+        border-radius: 50%;
+        overflow: hidden;
+        flex-shrink: 0;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        &--placeholder {
+            background: var(--bg-2);
+            border: 1px solid var(--line-2);
+        }
+
+        @media (max-width: 620px) {
+            width: 96px;
+            height: 96px;
+        }
+    }
+
+    .testi__quote {
+        font-size: clamp(20px, 2.3vw, 30px)!important;
+        font-weight: 500;
+        line-height: 1.4;
+        letter-spacing: -0.015em;
+        color: var(--white);
+        max-width: 30ch;
+
+        &::before {
+            content: "\201C";
+            color: var(--gold);
+        }
+    }
+
+    .testi__who {
+        margin-top: 26px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        b {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        span {
+            font-family: var(--mono);
+            font-size: 12px;
+            letter-spacing: 0.1em;
+            color: var(--gold);
+            text-transform: uppercase;
+        }
+    }
+
+    .testi__sep {
+        width: 24px;
+        height: 1px;
+        background: var(--line-2);
+        display: inline-block;
+    }
+
+    .testi__nav {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        margin-top: 52px;
+    }
+
+    .testi__arrow {
+        width: 52px;
+        height: 52px;
+        border: 1px solid var(--line-2);
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: none;
+        color: var(--white);
+        cursor: pointer;
+        font-size: 18px;
+        transition: all 0.3s var(--ease);
+
+        &:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+    }
+
+    .testi__dots {
+        display: flex;
+        gap: 9px;
+        margin-left: 8px;
+    }
+
+    .testi__dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--line-2);
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s var(--ease);
+
+        &.is-active {
+            background: var(--gold);
+            width: 26px;
+            border-radius: 4px;
+        }
+    }
+}
+
+@keyframes testi-fade {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}

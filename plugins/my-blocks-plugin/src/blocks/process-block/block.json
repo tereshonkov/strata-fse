@@ -1,0 +1,43 @@
+{
+    "apiVersion": 3,
+    "name": "my-plugin/process-block",
+    "title": "Process Block",
+    "category": "theme",
+    "description": "Process section for STRATA construction landing",
+    "supports": {
+        "html": false
+    },
+    "attributes": {
+        "kicker": {
+            "type": "string",
+            "default": "02 — Process"
+        },
+        "title": {
+            "type": "string",
+            "default": "How we work"
+        },
+        "lead": {
+            "type": "string",
+            "default": "A clear, four-step path from first call to handover — no grey areas, no moving targets."
+        },
+        "steps": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "number": { "type": "string" },
+                    "title": { "type": "string" },
+                    "description": { "type": "string" }
+                }
+            },
+            "default": [
+                { "number": "01", "title": "Request", "description": "Tell us about your space and goals. We respond within one business day." },
+                { "number": "02", "title": "Site visit", "description": "A specialist measures on site and assesses the full scope — free of charge." },
+                { "number": "03", "title": "Estimate", "description": "A transparent, itemised quote with fixed pricing and a committed timeline." },
+                { "number": "04", "title": "Start of works", "description": "We sign the contract and mobilise the crew. You track progress in real time." }
+            ]
+        }
+    },
+    "editorScript": "file:../../../build/index.js",
+    "style": "file:../../../build/style-index.css"
+}
