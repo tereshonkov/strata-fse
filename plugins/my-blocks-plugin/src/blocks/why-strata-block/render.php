@@ -28,7 +28,7 @@ $why_strata = new WP_Query([
 ]);
 ?>
 
-<section class="why-strata-block">
+<section class="why-strata-block" id="why-strata">
     <div class="why-strata-block__container">
 
         <div class="why-strata-block__head">

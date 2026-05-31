@@ -6,7 +6,7 @@ A production-ready WordPress plugin built for a construction & interiors landing
 
 ## Live Demo
 
-> Coming soon — deploying to production host
+> https://strata-preview.pp.ua
 
 ---
 

@@ -7,7 +7,7 @@ export default function Save({ attributes }) {
 
   return (
     <div {...blockProps}>
-      <div className="pricing-block__container">
+      <div className="pricing-block__container" id="pricing">
         <div className="pricing-block__head">
           <div className="pricing-block__kicker">
             <span className="kicker">{kicker}</span>

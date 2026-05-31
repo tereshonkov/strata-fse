@@ -14,7 +14,7 @@ export default function Save({ attributes }) {
 
   return (
     <div {...blockProps}>
-      <div className="footer-block__container">
+      <div className="footer-block__container" id="footer">
         <div className="footer-block__head">
           <div className="footer-block__lead-container">
             <div className="brand">

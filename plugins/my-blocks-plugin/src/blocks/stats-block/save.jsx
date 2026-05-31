@@ -5,7 +5,7 @@ export default function Save({ attributes }) {
   const blockProps = useBlockProps.save();
   return (
     <div {...blockProps} className="stats-block">
-      <div className="stats-block__container">
+      <div className="stats-block__container" id="stats">
         <div className="stats-block__grid">
           {stats.map((stat, index) => (
             <div className="stats-block__item" key={index}>

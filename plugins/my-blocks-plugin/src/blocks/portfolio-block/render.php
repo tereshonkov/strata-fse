@@ -16,7 +16,7 @@ $projects = new WP_Query([
 ]);
 ?>
 
-<section class="portfolio-block">
+<section class="portfolio-block" id="portfolio">
     <div class="portfolio-block__container">
 
         <div class="portfolio-block__head">

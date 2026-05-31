@@ -11,7 +11,7 @@ $testimonials = new WP_Query([
 ]);
 ?>
 
-<section class="testimonials-block">
+<section class="testimonials-block" id="testimonials">
     <div class="testimonials-block__container">
 
         <div class="testimonials-block__head">

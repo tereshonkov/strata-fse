@@ -30,7 +30,7 @@ $services = new WP_Query([
 ]);
 ?>
 
-<section class="services-block">
+<section class="services-block" id="services">
     <div class="services-block__container">
 
         <div class="services-block__head">

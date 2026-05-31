@@ -6,7 +6,7 @@ export default function Save( { attributes } ) {
     const blockProps = useBlockProps.save({ className: 'hero-block alignfull' });
 
     return (
-        <div { ...blockProps } className="hero-block">
+        <div { ...blockProps } className="hero-block" id="hero">
             <div className="hero-block__overlay" />
             <div className="hero-block__bg" />
             <div className="hero-block__content">

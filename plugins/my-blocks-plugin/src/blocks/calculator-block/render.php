@@ -14,7 +14,7 @@ $mult_std    = $attributes['multStandard'] ?? 1.35;
 $mult_prem   = $attributes['multPremium'] ?? 1.9;
 ?>
 
-<section class="calculator-block">
+<section class="calculator-block" id="calculator">
     <div class="calculator-block__container">
 
         <div class="calculator-block__head">
