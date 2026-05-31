@@ -1,0 +1,92 @@
+{
+  "apiVersion": 3,
+  "name": "my-plugin/footer-block",
+  "title": "Footer Block",
+  "category": "theme",
+  "description": "Footer section for STRATA construction landing",
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "lead": {
+      "type": "string",
+      "default": "Premium turnkey renovation for homes and commercial interiors engineered to the millimetre, delivered on schedule, finished to last."
+    },
+    "logo": {
+      "type": "string",
+      "default": "https://strata.com/logo.svg"
+    },
+    "copyright": {
+      "type": "string",
+      "default": "© 2026 STRATA. All rights reserved."
+    },
+    "companyLinks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string" },
+          "url": { "type": "string" }
+        }
+      },
+      "default": [
+        { "title": "About", "url": "#" },
+        { "title": "Projects", "url": "#" },
+        { "title": "Process", "url": "#" },
+        { "title": "Careers", "url": "#" }
+      ]
+    },
+    "servicesLinks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string" },
+          "url": { "type": "string" }
+        }
+      },
+      "default": [
+        { "title": "Turnkey renovation", "url": "#" },
+        { "title": "Rough finishing", "url": "#" },
+        { "title": "Design project", "url": "#" },
+        { "title": "Commercial", "url": "#" }
+      ]
+    },
+    "contactLinks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string" },
+          "url": { "type": "string" }
+        }
+      },
+      "default": [
+        { "title": "+1 (415) 555-0148", "url": "tel:+1415550148" },
+        { "title": "info@strata.com", "url": "mailto:info@strata.com" },
+        {
+          "title": "240 Harbor Ave, Suite 1100",
+          "url": "https://maps.app.goo.gl/123MainStSanFranciscoCA94101"
+        }
+      ]
+    },
+    "socialLinks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": { "type": "string" },
+          "url": { "type": "string" }
+        }
+      },
+      "default": [
+        { "label": "IG", "url": "#" },
+        { "label": "BE", "url": "#" },
+        { "label": "LI", "url": "#" },
+        { "label": "YT", "url": "#" }
+      ]
+    }
+  },
+  "editorScript": "file:../../../build/index.js",
+  "style": "file:../../../build/style-index.css"
+}

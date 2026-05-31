@@ -24,6 +24,8 @@ function my_blocks_register_blocks()
     register_block_type(__DIR__ . '/src/blocks/calculator-block');
     register_block_type(__DIR__ . '/src/blocks/why-strata-block');
     register_block_type(__DIR__ . '/src/blocks/testimonials-block');
+    register_block_type(__DIR__ . '/src/blocks/cta-block');
+    register_block_type(__DIR__ . '/src/blocks/footer-block');
 }
 add_action('init', 'my_blocks_register_blocks');
 
@@ -138,3 +140,53 @@ function my_blocks_register_post_types()
     ]);
 }
 add_action('init', 'my_blocks_register_post_types');
+
+// AJAX обробник форми
+function strata_handle_contact_form() {
+    // Перевіряємо nonce
+    if ( ! isset( $_POST['strata_nonce'] ) || 
+         ! wp_verify_nonce( $_POST['strata_nonce'], 'strata_contact' ) ) {
+        wp_send_json_error( [ 'message' => 'Security check failed.' ] );
+    }
+
+    // Отримуємо дані
+    $name  = sanitize_text_field( $_POST['strata_name'] ?? '' );
+    $phone = sanitize_text_field( $_POST['strata_phone'] ?? '' );
+    $email = sanitize_email( $_POST['recipient_email'] ?? get_option( 'admin_email' ) );
+
+    // Перевіряємо що поля заповнені
+    if ( empty( $name ) || empty( $phone ) ) {
+        wp_send_json_error( [ 'message' => 'Please fill in all fields.' ] );
+    }
+
+    // Відправляємо email
+    $subject = 'New request from STRATA website';
+    $body    = "Name: $name\nPhone: $phone";
+    $headers = [ 'Content-Type: text/plain; charset=UTF-8' ];
+
+    $sent = wp_mail( $email, $subject, $body, $headers );
+
+    if ( $sent ) {
+        wp_send_json_success( [ 'message' => 'Thank you! We will call you back soon.' ] );
+    } else {
+        wp_send_json_error( [ 'message' => 'Something went wrong. Please try again.' ] );
+    }
+}
+/*
+wp_verify_nonce — перевіряє токен безпеки. Якщо хтось спробує відправити запит напряму без форми — отримає помилку.
+sanitize_text_field — очищає дані від шкідливого коду. Завжди використовуй перед збереженням або відправкою даних від користувача.
+wp_ajax_nopriv_strata_contact — nopriv означає що форма доступна для незалогінених користувачів. Без цього форма працювала б тільки для адмінів 😄
+wp_send_json_success/error — відправляє JSON відповідь і завершує виконання. 
+*/
+add_action( 'wp_ajax_strata_contact',        'strata_handle_contact_form' );
+add_action( 'wp_ajax_nopriv_strata_contact', 'strata_handle_contact_form' );
+
+// Локалізуємо скрипт для блоку CTA для отримання URL AJAX
+function my_blocks_localize_scripts() {
+    wp_localize_script(
+        'my-plugin-cta-block-view-script',
+        'strataAjax',
+        [ 'url' => admin_url( 'admin-ajax.php' ) ]
+    );
+}
+add_action( 'wp_enqueue_scripts', 'my_blocks_localize_scripts' );

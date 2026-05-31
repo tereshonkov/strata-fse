@@ -4,6 +4,20 @@ Description: Minimal block theme for STRATA landing
 Version: 1.0
 */
 
+/* Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, ol, li {
+    margin: 0;
+    padding: 0;
+}
+
+ul, ol {
+    list-style: none;
+}
+
 :root {
     --bg-0: #0E1012;
     --bg-1: #16181C;

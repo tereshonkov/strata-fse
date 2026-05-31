@@ -8,3 +8,5 @@ import './blocks/pricing-block';
 import './blocks/calculator-block';
 import './blocks/why-strata-block';
 import './blocks/testimonials-block';
+import './blocks/cta-block';
+import './blocks/footer-block';

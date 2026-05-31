@@ -6,5 +6,6 @@ module.exports = {
         ...defaultConfig.entry(),
         'calculator-frontend': './src/blocks/calculator-block/frontend.jsx',
         'testimonials-frontend': './src/blocks/testimonials-block/frontend.js',
+        'cta-frontend': './src/blocks/cta-block/frontend.js',
     },
 };
