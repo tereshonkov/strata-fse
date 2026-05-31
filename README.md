@@ -145,4 +145,4 @@ npm run build   # Production build
 
 ## Author
 
-Built by [Your Name](https://github.com/tereshonkov) as a portfolio project demonstrating WordPress FSE and Gutenberg block development.
+Built by [Dmytro Tereshonkov](https://github.com/tereshonkov) as a portfolio project demonstrating WordPress FSE and Gutenberg block development.
