@@ -1,0 +1,36 @@
+{
+  "apiVersion": 3,
+  "name": "my-plugin/cta-block",
+  "title": "CTA Block",
+  "category": "theme",
+  "description": "CTA section for STRATA construction landing",
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "kicker": {
+      "type": "string",
+      "default": "- Get started"
+    },
+    "title": {
+      "type": "string",
+      "default": "Ready to start building?"
+    },
+    "lead": {
+      "type": "string",
+      "default": "Leave your details and a project manager will call you back within one business day with the next steps."
+    },
+    "buttonText": {
+      "type": "string",
+      "default": "Request a callback"
+    },
+    "recipientEmail": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:../../../build/index.js",
+  "viewScript": "file:../../../build/cta-frontend.js",
+  "style": "file:../../../build/style-index.css",
+  "render": "file:./render.php"
+}

@@ -1,0 +1,24 @@
+{
+  "apiVersion": 3,
+  "name": "my-plugin/header-block",
+  "title": "Header Block",
+  "category": "theme",
+  "description": "Site header with navigation for STRATA",
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "phone": {
+      "type": "string",
+      "default": "+1 (415) 555-0148"
+    },
+    "ctaText": {
+      "type": "string",
+      "default": "Get an Estimate"
+    }
+  },
+  "editorScript": "file:../../../build/index.js",
+  "style": "file:../../../build/style-index.css",
+  "render": "file:./render.php",
+  "editorStyle": "file:../../../build/index.css"
+}

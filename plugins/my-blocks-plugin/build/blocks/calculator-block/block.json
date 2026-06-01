@@ -1,0 +1,68 @@
+{
+  "apiVersion": 3,
+  "name": "my-plugin/calculator-block",
+  "title": "Calculator Block",
+  "category": "theme",
+  "description": "Price calculator for STRATA construction landing",
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "kicker": {
+      "type": "string",
+      "default": "05 — Calculator"
+    },
+    "title": {
+      "type": "string",
+      "default": "Estimate your project"
+    },
+    "lead": {
+      "type": "string",
+      "default": "Move the slider, pick your scope and material grade — get a realistic figure in seconds."
+    },
+    "minArea": {
+      "type": "number",
+      "default": 20
+    },
+    "maxArea": {
+      "type": "number",
+      "default": 500
+    },
+    "stepArea": {
+      "type": "number",
+      "default": 5
+    },
+    "defaultArea": {
+      "type": "number",
+      "default": 90
+    },
+    "roughFinish": {
+      "type": "number",
+      "default": 180
+    },
+    "turnkey": {
+      "type": "number",
+      "default": 420
+    },
+    "designBuild": {
+      "type": "number",
+      "default": 680
+    },
+    "multEconomy": {
+      "type": "number",
+      "default": 1
+    },
+    "multStandard": {
+      "type": "number",
+      "default": 1.35
+    },
+    "multPremium": {
+      "type": "number",
+      "default": 1.9
+    }
+  },
+  "editorScript": "file:../../../build/index.js",
+  "viewScript": "file:../../../build/calculator-frontend.js",
+  "style": "file:../../../build/style-index.css",
+  "render": "file:./render.php"
+}

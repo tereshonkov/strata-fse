@@ -26,8 +26,8 @@ export default function Save( { attributes } ) {
                     value={ subtitle }
                 />
                 <div className="hero-block__buttons">
-                <Button text={ primaryButtonText } variant="primary" />
-                <Button text={ secondaryButtonText } variant="ghost" />
+                <Button url={ "#calculator" } text={ primaryButtonText } variant="primary" />
+                <Button url={ "#portfolio" } text={ secondaryButtonText } variant="ghost" />
                 </div>
             </div>
         </div>

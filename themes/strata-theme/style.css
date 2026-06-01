@@ -18,6 +18,10 @@ ul, ol {
     list-style: none;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     --bg-0: #0E1012;
     --bg-1: #16181C;
